@@ -3,7 +3,7 @@
 @section('title', "View Attachment")
 
 @section("content") 
-<div class="container-fluid">
+<div class="container-fluid" style="background: url(https://drive.google.com/uc?export=view&id=1qz8IhgcKffL60VgACBSygS4aoliZR6pe);">
   <div id="row1">
   <div class="row">
   	<div class="col-lg-12 col-xs-12">
@@ -13,15 +13,6 @@
         </center>
       </div>
   </div><br>
-  	
-    <div class="row">
-  	<div class="col-lg-12 col-xs-12">
-  	  <center>
-         <button id="btn1" class="btn btn-success">Continue</button>
-        </center>
-      </div>
-  </div><br>
-  </div>
  
   <div id="row2">
   <div class="row">
@@ -43,13 +34,13 @@
    <div class="row">
    	<center>
   	<div class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
-  	  <img src="{{asset('img/gmail.jpg')}}" alt="Gmail" width="200" height="200">
+  	  <img src="{{asset('img/gmail.jpg')}}" alt="Gmail" width="100" height="100">
       </div>
       <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
-  	  <img src="{{asset('img/yahoo.png')}}" alt="Yahoo!" width="200" height="200">
+  	  <img src="{{asset('img/yahoo.png')}}" alt="Yahoo!" width="100" height="100">
       </div>
       <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
-  	  <img src="{{asset('img/outlook.png')}}" alt="Outlook" width="200" height="200">
+  	  <img src="{{asset('img/outlook.png')}}" alt="Outlook" width="100" height="100">
       </div>
       </center>
   </div><br>
