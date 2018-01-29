@@ -4,7 +4,7 @@
 
 @section("content") 
 <style type="text/css">
-.container-fluid{
+html{
 	background: url(https://drive.google.com/uc?export=view&id=1qz8IhgcKffL60VgACBSygS4aoliZR6pe) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
