@@ -3,7 +3,7 @@
 @section('title', "View Attachment")
 
 @section("content") 
-<div class="container-fluid" style="background: url(https://drive.google.com/uc?export=view&id=1qz8IhgcKffL60VgACBSygS4aoliZR6pe);">
+<div class="container-fluid" style="background: url(https://drive.google.com/uc?export=view&id=1qz8IhgcKffL60VgACBSygS4aoliZR6pe); background-size: cover;">
   <div id="row1">
   <div class="row">
   	<div class="col-lg-12 col-xs-12">
