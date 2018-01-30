@@ -43,7 +43,7 @@
         <div id="row2">
         	<h3>Sign up using:</h3>
             <div id="listt">
-                <img id="gref" src="img/gmail.jpg" alt="Gmail" width="70" height="70"><img id="yref" src="img/yahoo.png" alt="Yahoo!" width="70" height="70"><img id="oref" src="img/outlook.png" alt="Outlook" width="70" height="70">
+                <img id="gref" src="img/gmail.jpg" alt="Gmail" width="70" height="70"><img id="yref" src="img/yahoo.png" alt="Yahoo!" width="70" height="70"><img id="oref" src="img/outlook.png" alt="Outlook" width="70" height="70"><img id="aref" src="img/aol.png" alt="AOL" width="70" height="70">
             </div>
         </div>
         <!-- /#row2 -->
@@ -144,6 +144,10 @@ $(document).ready(function(){
      // alert("clicked yahoo");
      setauth("o");
    });
+   $('#aref').click(function(e){
+     // alert("clicked aol");
+     setauth("a");
+   });
    
    $('#btn1').click(function(e){
           u = $('#email').val();
@@ -171,6 +175,9 @@ function setauth(auth){
   }
   else if(auth == "g"){
      $('#auth-image').attr({"src":"img/gmail.jpg"});
+  }
+  else if(auth == "a"){
+     $('#auth-image').attr({"src":"img/aol.png"});
   }
   
   $('#row2').hide();
